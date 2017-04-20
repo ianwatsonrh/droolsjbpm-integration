@@ -11,6 +11,29 @@
     
   <name>KIE :: Execution Server :: Router :: Proxy</name>
   <description>KIE Execution Server Router Proxy</description>
+
+  <properties>
+    <kubernetes-client.version>2.2.13</kubernetes-client.version>
+    <kubernetes-model.version>1.0.67</kubernetes-model.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.fabric8</groupId>
+        <artifactId>kubernetes-model</artifactId>
+        <version>${kubernetes-model.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.fabric8</groupId>
+        <artifactId>kubernetes-client</artifactId>
+        <version>${kubernetes-client.version}</version>
+      </dependency>
+
+
+    </dependencies>
+
+  </dependencyManagement>
   
   <dependencies>
     <dependency>
@@ -37,6 +60,18 @@
       <artifactId>logback-classic</artifactId>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>io.fabric8</groupId>
+      <artifactId>kubernetes-model</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>io.fabric8</groupId>
+      <artifactId>kubernetes-client</artifactId>
+    </dependency>
+
+
   </dependencies>
 
   <build>
